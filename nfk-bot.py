@@ -59,6 +59,7 @@ async def _8ball(ctx, *, question, help='Спросите бота что уго
                  'А ты попадаешь рейлом в дырочку?', 'Хороший вопрос...',
                  'Я в таких вопросах разбираться не желаю.', 'Согласен, уныло',
                  'А ты сядь попой на плиту и проверь!', 'Ты тимкиллер года!',
+                 'Роке-Нубло — вулканическая скала высотой 1813 метров',
                  ]
     await ctx.send(f'Вопрос: {question}\nМыслебот: {random.choice(responses)}')
 
@@ -95,7 +96,7 @@ async def tdm_pain(ctx, help='Searches for TDM games with high score difference'
     games_hum = np.tdm_find_hum_games()
     try:
         for game in games_hum:
-            await ctx.send(f'Map {game[0]}, {game[1][0]}, {game[1][1]}')
+            await ctx.send(f'Map {game[1][0]}, {game[0]}, {game[1][1]}')
     except:
         await ctx.send(f'{games_hum}')
 
@@ -105,7 +106,7 @@ async def ctf_pain(ctx, help='Searches for CTF games with high score difference'
     games_hum = np.ctf_find_hum_games()
     try:
         for game in games_hum:
-            await ctx.send(f'Map {game[0]}, {game[1][0]}, {game[1][1]}')
+            await ctx.send(f'Map {game[1][0]}, {game[0]}, {game[1][1]}')
     except:
         await ctx.send(f'{games_hum}')
 
@@ -115,7 +116,7 @@ async def tdm_close(ctx, help='Searches for close TDM games'):
     games_close = ncg.tdm_find_close_games()
     try:
         for game in games_close:
-            await ctx.send(f'Map {game[0]}, {game[1][0]}, {game[1][1]}')
+            await ctx.send(f'Map {game[1][0]}, {game[0]}, {game[1][1]}')
     except:
         await ctx.send(f'{games_close}')
 
@@ -125,7 +126,7 @@ async def ctf_close(ctx, help='Searches for close CTF games'):
     games_close = ncg.ctf_find_close_games()
     try:
         for game in games_close:
-            await ctx.send(f'Map {game[0]}, {game[1][0]}, {game[1][1]}')
+            await ctx.send(f'Map {game[1][0]}, {game[0]}, {game[1][1]}')
     except:
         await ctx.send(f'{games_close}')
 
@@ -135,7 +136,7 @@ async def comments(ctx, help='Searches games with comments'):
     games_comments = nc.find_comments()
     try:
         for game in games_comments:
-            await ctx.send(f'Map {game[0]}, {game[1]}')
+            await ctx.send(f'Map {game[1]}, {game[0]}')
     except:
         await ctx.send(f'{games_comments}')
 
@@ -160,4 +161,4 @@ async def ctf_long(ctx, help='Finds long CTF games'):
         await ctx.send(f'{games_long}')
 
 
-client.run('Njk1MjY0ODE2NzcxNzYwMTkw.XoYMDw.Tzz1cG2UPl5YfXEiPuY9V5DhuGs')
+client.run('Njk1MjY0ODE2NzcxNzYwMTkw.XooSBQ.azwvLQyTuFVumLxjCfqaMSOwJOA')

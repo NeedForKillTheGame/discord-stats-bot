@@ -13,6 +13,8 @@ def find_long_tdm():
             game = "https://stats.needforkill.ru/match/" + match['matchID']
             gametime_min = str(int(match['gameTime']) // 60) + ':'
             gametime_sec = str(int(match['gameTime']) % 60)
+            if gametime_sec == '0':
+                gametime_sec = '00'
             gametime = gametime_min + gametime_sec
             games_long[mapname] = game, gametime
     if len(games_long) == 0:

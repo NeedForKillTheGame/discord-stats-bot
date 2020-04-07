@@ -54,7 +54,7 @@ def ctf_maps():
 
 
 def duel_maps():
-    '''Функция показывает количество игр, сыгранных на КТФ картах'''
+    '''Функция показывает количество игр, сыгранных на 1в1 картах'''
     url = 'https://stats.needforkill.ru/api.php?action=matches&skip=0&take=100'
     response = requests.get(url)
     matches = response.json()

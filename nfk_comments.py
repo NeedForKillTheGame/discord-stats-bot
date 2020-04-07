@@ -11,7 +11,8 @@ def find_comments():
         if int(match['comments']) >= 2:
                 mapname = match['map']
                 game = "https://stats.needforkill.ru/match/" + match['matchID']
-                games_comments[mapname] = game
+                games_comments[game] = mapname
+
     if len(games_comments) == 0:
         return 'No games were found. Stop asking and go fuck yourself.'
     games_comments_overall = []
