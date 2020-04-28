@@ -6,6 +6,7 @@ import nfk_punishment as np
 import nfk_close_games as ncg
 import nfk_comments as nc
 import nfk_long_games as nlg
+import nfk_history as nfh
 
 
 client = commands.Bot(command_prefix="!")
@@ -27,18 +28,18 @@ async def on_ready():
 async def on_message(message):
     if message.author.bot:
         return
-    elif message.content.startswith('Hello'):
+    elif message.content.startswith('Hello' or 'hello'):
             await message.channel.send(
                 'Лапшу из местной столовой тебе в хайло!')
-    elif message.content.startswith('Hi'):
+    elif message.content.startswith('Hi' or 'hi'):
             await message.channel.send('Хуяй блять, англичашек развелось!')
     elif message.content.startswith('Привет'):
             await message.channel.send('Привет, мясо.')
     elif message.content.endswith('привет'):
             await message.channel.send('Приветик, кусок костей.')
-    elif message.content.startswith('Здоров'):
+    elif message.content.startswith('Здоров' or 'здоров'):
             await message.channel.send('И тебе не хворать, человекообразный.')
-    elif message.content.startswith('Здрав'):
+    elif message.content.startswith('Здрав' or 'здрав'):
         await message.channel.send('Касперского мне в жопу, кого я вижу!')
     await client.process_commands(message)
 
@@ -62,6 +63,12 @@ async def _8ball(ctx, *, question, help='Спросите бота что уго
                  'Роке-Нубло — вулканическая скала высотой 1813 метров',
                  ]
     await ctx.send(f'Вопрос: {question}\nМыслебот: {random.choice(responses)}')
+
+
+@client.command(aliases=['history', 'NFK', 'нфк', 'НФК'])
+async def nfk(ctx, help='Профессианальный словарь терминов и выражений НФК'):
+    fact = nfh.random_fact()
+    await ctx.send(f'{fact}')
 
 
 @client.command()
@@ -161,4 +168,4 @@ async def ctf_long(ctx, help='Finds long CTF games'):
         await ctx.send(f'{games_long}')
 
 
-client.run('Njk1MjY0ODE2NzcxNzYwMTkw.XooSBQ.azwvLQyTuFVumLxjCfqaMSOwJOA')
+client.run('Njk1MjY0ODE2NzcxNzYwMTkw.XoxD2w.Gy47dujQcoRQf6gwef1CswU3egs')
